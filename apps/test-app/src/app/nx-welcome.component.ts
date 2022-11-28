@@ -433,7 +433,7 @@ import { Component, ViewEncapsulation } from '@angular/core';
         <div id="welcome">
           <h1>
             <span> Hello there, </span>
-            Welcome awesomecomponents 👋
+            Welcome test-app 👋
           </h1>
         </div>
 

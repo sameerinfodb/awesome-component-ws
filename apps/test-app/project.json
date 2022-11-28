@@ -1,25 +1,22 @@
 {
-  "name": "awesomecomponents",
+  "name": "test-app",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/awesomecomponents/src",
+  "sourceRoot": "apps/test-app/src",
   "prefix": "awesome-component-ws",
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/awesomecomponents",
-        "index": "apps/awesomecomponents/src/index.html",
-        "main": "apps/awesomecomponents/src/main.ts",
+        "outputPath": "dist/apps/test-app",
+        "index": "apps/test-app/src/index.html",
+        "main": "apps/test-app/src/main.ts",
         "polyfills": ["zone.js"],
-        "tsConfig": "apps/awesomecomponents/tsconfig.app.json",
+        "tsConfig": "apps/test-app/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": [
-          "apps/awesomecomponents/src/favicon.ico",
-          "apps/awesomecomponents/src/assets"
-        ],
-        "styles": ["apps/awesomecomponents/src/styles.scss"],
+        "assets": ["apps/test-app/src/favicon.ico", "apps/test-app/src/assets"],
+        "styles": ["apps/test-app/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -53,10 +50,10 @@
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
         "production": {
-          "browserTarget": "awesomecomponents:build:production"
+          "browserTarget": "test-app:build:production"
         },
         "development": {
-          "browserTarget": "awesomecomponents:build:development"
+          "browserTarget": "test-app:build:development"
         }
       },
       "defaultConfiguration": "development"
@@ -64,23 +61,20 @@
     "extract-i18n": {
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
-        "browserTarget": "awesomecomponents:build"
+        "browserTarget": "test-app:build"
       }
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": [
-          "apps/awesomecomponents/**/*.ts",
-          "apps/awesomecomponents/**/*.html"
-        ]
+        "lintFilePatterns": ["apps/test-app/**/*.ts", "apps/test-app/**/*.html"]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
       "options": {
-        "jestConfig": "apps/awesomecomponents/jest.config.ts",
+        "jestConfig": "apps/test-app/jest.config.ts",
         "passWithNoTests": true
       }
     }
